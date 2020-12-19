@@ -1,4 +1,5 @@
 import sys
+import subprocess
 
 name = "Corgi"
 email = [
@@ -8,6 +9,9 @@ email = [
 
 
 def main(args):
+    clone_amt = 0
+    unique_amt = 0
+
     if len(args) != 3:
         print ("앱 사용법♥♥: python3 main.py <Clone amount> <Unique clone amount>")
         return
@@ -20,12 +24,18 @@ def main(args):
         return
 
     # get arguments of number of unique clones and number of normal clones
+    for i in range(clone_amt):
+        # clone
+        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/algorithm-practice"])
+        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/algorithm-practice"])
 
-
-    # clone
 
 
     # print message
+
+    for i in range(unique_amt):
+
+        # clone
     print("Clone successful♥♥")
 
 if __name__ == "__main__":
