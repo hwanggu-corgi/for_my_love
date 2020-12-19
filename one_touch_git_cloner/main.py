@@ -26,14 +26,15 @@ def main(args):
     # get arguments of number of unique clones and number of normal clones
     for i in range(clone_amt):
         # clone
-        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/algorithm-practice"])
-        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/algorithm-practice"])
-
-
+        subprocess.run(["rm", "-rf", "cloned_folder"])
+        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/resume_personal_statement", "cloned_folder"])
 
     # print message
 
     for i in range(unique_amt):
+        subprocess.run(["rm", "-rf", "cloned_folder"])
+        subprocess.run(["", "-rf", "cloned_folder"])
+        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/resume_personal_statement", "cloned_folder"])
 
         # clone
     print("Clone successful♥♥")
