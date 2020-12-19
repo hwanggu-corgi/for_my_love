@@ -6,9 +6,10 @@ email = [
     "guhyungm7@gmail.com",
     "hwanggumedia@gmail.com",
 ]
+repo_name = "resume_personal_statement"
 
 
-def main(args):
+def main(args, name, email, repo_name):
     clone_amt = 0
     unique_amt = 0
 
@@ -33,8 +34,9 @@ def main(args):
 
     for i in range(unique_amt):
         subprocess.run(["rm", "-rf", "cloned_folder"])
-        subprocess.run(["", "-rf", "cloned_folder"])
-        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/resume_personal_statement", "cloned_folder"])
+        subprocess.run(["git", "config", "--global" , "user.name", name])
+        subprocess.run(["git", "config", "--global" , "user.email", email[i]])
+        subprocess.run(["git", "clone", "https://github.com/hwanggu-corgi/{}".format(repo_name), "cloned_folder"])
 
         # clone
     print("Clone successful♥♥")
@@ -42,4 +44,4 @@ def main(args):
 if __name__ == "__main__":
     args = sys.argv
     print(args)
-    main(args)
+    main(args, name, email, repo_name)
